@@ -14,7 +14,7 @@ You can control this attribute via policyfiles, roles, environments, etc. as lon
 `chef-client -j ohai_only_true.json`
 
 ### Disabling ohai_only via JSON file
-``
+```
 {"ohai_only":false}
 ```
 
