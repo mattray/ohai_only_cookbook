@@ -1,0 +1,25 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  always_update_cookbooks: true
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu-18.04
+
+suites:
+  - name: trueth
+    run_list:
+    - recipe[ohai_only::default]
+    - recipe[ohai_only::next]
+    attributes:
+      ohai_only: true
+  - name: falseth
+    run_list:
+    - recipe[ohai_only::default]
+    - recipe[ohai_only::next]
